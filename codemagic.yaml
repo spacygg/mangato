@@ -23,11 +23,8 @@ workflows:
       cancel_previous_builds: false
     scripts:
       - echo "single line script"
-      - name: Flutter test
-        script: flutter test
-        ignore_failure: true
       - name: Build for iOS
-        script: flutter build ios
+        script: flutter build ios -no-codesign
       - name: Tree
         script: tree
 

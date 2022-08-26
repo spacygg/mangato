@@ -24,7 +24,7 @@ workflows:
     scripts:
       - echo "single line script"
       - name: Build for iOS
-        script: flutter build ios -no-codesign
+        script: flutter build ios --no-codesign
       - name: Tree
         script: tree
 

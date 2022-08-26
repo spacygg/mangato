@@ -24,7 +24,7 @@ workflows:
     scripts:
       - echo "single line script"
       - name: Build for iOS
-        script: flutter build ios --no-codesign
+        script: flutter build ios --release --no-codesign
       - name: Creating ipa file
         script: mkdir -p build/ios/iphoneos/Payload
         script: mv build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload

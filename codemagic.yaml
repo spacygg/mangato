@@ -25,11 +25,16 @@ workflows:
       - echo "single line script"
       - name: Build for iOS
         script: flutter build ios --no-codesign
-      - name: Tree
-        script: tree
+      - name: Creating ipa file
+        script: mkdir -p build/ios/iphoneos/Payload
+        script: mv build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload
+        script: cd build/ios/iphoneos
+        script: zip -r app.ipa Payload
+        script: rm -rf Payload
+        
 
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/ios/iphoneos/*.ipa
     publishing:
       email:
         recipients:

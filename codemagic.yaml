@@ -30,7 +30,7 @@ workflows:
       - name: Moving Runner
         script: mv build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload
       - name: Creating ipa file
-        script: zip -r /build/ios/iphoneos/app.ipa build/ios/iphoneos/Payload
+        script: zip -r build/ios/iphoneos/app.ipa build/ios/iphoneos/Payload
         
 
     artifacts:

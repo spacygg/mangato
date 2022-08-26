@@ -21,6 +21,16 @@ workflows:
           include: true
           source: true
       cancel_previous_builds: false
+    scripts:
+      - echo "single line script"
+      - name: Flutter test
+        script: flutter test
+        ignore_failure: true
+      - name: Build for iOS
+        script: flutter build ios
+      - name: Tree
+        script: tree
+
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
